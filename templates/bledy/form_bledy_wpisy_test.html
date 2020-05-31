@@ -1,0 +1,30 @@
+{% extends 'bledy/base.html' %}
+{% load bootstrap %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="card col-md-6 my-3 mx-auto">
+            <div class="card-body">
+                <form method="post" role="form" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="md-form">
+                        <input placeholder="Placeholder" type="text" id="inputPlaceholderEx" class="form-control">
+                        <label for="inputPlaceholderEx">Placeholder</label>
+                    </div>
+
+                    <select class="browser-default custom-select">
+                        <option selected>----------</option>
+                        {% for wpis in lista %}
+                            <option value="1">{{ wpis.nazwa_wiazki }}</option>
+                        {% endfor %}
+                    </select>
+
+                    {{ form_blad_wpis_test.nr_wiazki|bootstrap }}
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Zapisz <i class="fas fa-save fa-lg"></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

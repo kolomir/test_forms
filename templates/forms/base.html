@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+    {% include "forms/head.html" %}
+    <body class="d-flex flex-column h-100 d-inline-block">
+        {% include "forms/header.html" %}
+        {% include "forms/messages.html" %}
+
+        {% block content %}
+        {% endblock content %}
+
+        {% include "forms/footer.html" %}
+        {% include "forms/scripts.html" %}
+    </body>
+</html>
