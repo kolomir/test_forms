@@ -26,6 +26,15 @@ def tools_list(request):
     return render(request,'forms/tools.html',context)
 
 
+def toolList():
+    tool_list = Tools.objects.filter(active='True').order_by('name')
+    return tool_list
+
+def employeeList():
+    employee_list = Employee.objects.filter(active='True').order_by('name')
+    return employee_list
+
+
 def new_employee(request):
     form_employee = EmployeeForm(request.POST or None, request.FILES or None)
 
